@@ -26,7 +26,13 @@ def main() -> None:
     with tab_chat:
         st.subheader("Q&A Chatbot")
         st.write("Uses retrieval + Ollama for grounded answers.")
-        use_ollama = st.toggle("Use Ollama generation", value=True)
+        use_ollama = st.toggle(
+            "Use Ollama generation",
+            value=False,
+            help="Disabled by default for Streamlit Cloud compatibility. Enable only when Ollama is reachable.",
+        )
+        if not use_ollama:
+            st.caption("Running in retrieval-only mode. Enable Ollama generation if a reachable endpoint is configured.")
         if use_ollama:
             st.caption(f"Configured Ollama endpoint: {settings.ollama_base_url}")
             st.caption(
