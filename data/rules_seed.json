@@ -1,0 +1,52 @@
+[
+    {
+        "id": "R1",
+        "title": "Play the Ball as It Lies",
+        "text": "In general, the player must play the ball as it lies on the course and play the course as the player finds it, unless a rule allows relief.",
+        "keywords": [
+            "ball as it lies",
+            "general principle",
+            "relief"
+        ]
+    },
+    {
+        "id": "R2",
+        "title": "Out of Bounds and Lost Ball",
+        "text": "A ball is out of bounds when all of it lies outside the boundary edge. If a ball is lost or out of bounds, the player normally proceeds under stroke-and-distance.",
+        "keywords": [
+            "out of bounds",
+            "lost ball",
+            "stroke and distance"
+        ]
+    },
+    {
+        "id": "R3",
+        "title": "Penalty Areas",
+        "text": "When a ball is in a penalty area, the player may play it as it lies or take penalty relief options for one penalty stroke under the applicable rule.",
+        "keywords": [
+            "penalty area",
+            "relief",
+            "one stroke penalty"
+        ]
+    },
+    {
+        "id": "R4",
+        "title": "Unplayable Ball",
+        "text": "Except when in a penalty area, a player may declare a ball unplayable anywhere on the course and proceed with relief options for one penalty stroke.",
+        "keywords": [
+            "unplayable",
+            "relief options",
+            "one penalty stroke"
+        ]
+    },
+    {
+        "id": "R5",
+        "title": "Putting Green Ball Mark and Lift",
+        "text": "On the putting green, a player may mark and lift the ball to clean it, then replace it on its original spot before play continues.",
+        "keywords": [
+            "putting green",
+            "mark",
+            "lift and replace"
+        ]
+    }
+]
