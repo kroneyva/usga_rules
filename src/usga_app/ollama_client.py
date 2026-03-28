@@ -3,9 +3,15 @@ import requests
 from .config import Settings
 
 
+def _auth_headers(settings: Settings) -> dict:
+    if settings.ollama_api_key:
+        return {"Authorization": f"Bearer {settings.ollama_api_key}"}
+    return {}
+
+
 def fetch_ollama_models(settings: Settings) -> list[str]:
     tags_url = f"{settings.ollama_base_url}/api/tags"
-    response = requests.get(tags_url, timeout=20)
+    response = requests.get(tags_url, headers=_auth_headers(settings), timeout=20)
     response.raise_for_status()
     models = response.json().get("models", [])
     return [m.get("name") for m in models if m.get("name")]
@@ -55,7 +61,12 @@ def ask_ollama(settings: Settings, selected_model: str, messages: list[dict]) ->
         "stream": False,
         "options": {"num_predict": settings.ollama_num_predict},
     }
-    response = requests.post(settings.ollama_chat_url, json=payload, timeout=settings.ollama_timeout)
+    response = requests.post(
+        settings.ollama_chat_url,
+        json=payload,
+        headers=_auth_headers(settings),
+        timeout=settings.ollama_timeout,
+    )
     response.raise_for_status()
     body = response.json()
     msg = body.get("message", {})

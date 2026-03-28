@@ -13,6 +13,7 @@ class Settings:
     ollama_model: str | None
     ollama_timeout: int
     ollama_num_predict: int
+    ollama_api_key: str | None
 
 
 def load_settings(project_root: Path | None = None) -> Settings:
@@ -27,4 +28,5 @@ def load_settings(project_root: Path | None = None) -> Settings:
         ollama_model=os.getenv("OLLAMA_MODEL"),
         ollama_timeout=int(os.getenv("OLLAMA_TIMEOUT", "300")),
         ollama_num_predict=int(os.getenv("OLLAMA_NUM_PREDICT", "160")),
+        ollama_api_key=os.getenv("OLLAMA_API_KEY") or None,
     )
